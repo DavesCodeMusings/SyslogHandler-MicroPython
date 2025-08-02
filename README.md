@@ -1,6 +1,8 @@
 # SyslogHandler-MicroPython
 Forget the print statement, send your debug messages to a network-based syslog server instead!
 
+[![Build SyslogHandler-MicroPython](https://github.com/DavesCodeMusings/SyslogHandler-MicroPython/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/DavesCodeMusings/SyslogHandler-MicroPython/actions/workflows/build.yml)
+
 ## What is it?
 SyslogHandler is a MicroPython class to extend the functionality of the MicroPython logging module. It lets you set up a custom handler to send messages to a network based syslog server. All of the other logging module features apply, such as filtering by severity and sending output to the console.
 
