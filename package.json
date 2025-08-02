@@ -1,0 +1,6 @@
+{
+  "urls": [
+    ["syslog_handler.mpy", "github:DavesCodeMusings/SyslogHandler-MicroPython/syslog_handler.mpy"]
+  ],
+  "version": "0.1"
+}
