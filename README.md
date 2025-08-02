@@ -46,7 +46,7 @@ There are plenty of things that can go wrong when logging to a remote server fro
 * Is your IoT network firewalled? Be sure to allow port 514/UDP through.
 * Is your MicroPython device connected to the network? Take a look at [boot.py](src/boot.py) for hints on how to get that done.
 
-## Syslog server
+## Don't have a syslog server?
 The folks at linuxserver.io have a [syslog-ng container](https://docs.linuxserver.io/images/docker-syslog-ng/) that's easy to get up and running on your centralized logging host. The following Docker Compose will help.
 
 ```
