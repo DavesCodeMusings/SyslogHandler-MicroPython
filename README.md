@@ -57,6 +57,34 @@ services:
     restart: unless-stopped
 ```
 
+This syslog-ng.conf file will do basic logging to a file.
+
+```
+@version:4.8
+# source for RFC5424 logs
+source s_udp_514 {
+  network(transport("udp") port(514));
+};
+
+source s_tcp_514 {
+  network(transport("tcp") port(514));
+};
+
+destination d_mesg {
+  file("/var/log/$YEAR$MONTH$DAY.log");
+};
+
+log {
+  source(s_udp_514);
+  destination(d_mesg);
+};
+
+log {
+  source(s_tcp_514);
+  destination(d_mesg);
+};
+```
+
 ## Bugs and such
 Did you find something that's not working? Use GitHub issues to report it. Please include:
 
