@@ -33,6 +33,7 @@ There are plenty of things that can go wrong when attempting to log to a remote 
 * Is your syslog server accepting connections? Try `echo "Testing 1 2 3" | nc 127.0.0.1 514` on the machine hosting the syslog server.
 * Is your IoT network firewalled? Be sure to allow port 514/UDP through.
 * Is your logging.basicConfig(level) set too high? Default is WARNING and above unless you explicitly set something else.
+* Is your MicroPython device connected to the network? Take a look at [boot.py](src/boot.py) for hints on how to get that done.
 
 ## Syslog server
 The folks at linuxserver.io have a syslog-ng container that's easy to get up and running on your centralized logging host. The following Docker Compose will help.
