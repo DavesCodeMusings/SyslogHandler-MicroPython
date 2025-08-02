@@ -10,11 +10,19 @@ SyslogHandler is a MicroPython class to extend the functionality of the MicroPyt
 If you create Internet of Things (IoT) devices and sensors with MicroPython, it's not always convenient to use USB-attached console debugging. Extending the logging module with syslog capability lets you track device health from a remote, centralized server.
 
 ## How can I use it?
-First, you'll need to install the MicroPython logging module. With mpremote, it's simply `mpremote connect PORT mip install logging`
+First, you'll need to install the MicroPython logging module. With mpremote, it's a simple command.
 
-Next, install this module. `mpremote connect PORT mip install github:DavesCodeMusings/SyslogHandler-MicroPython`
+```
+mpremote connect PORT mip install logging
+```
 
-Finally, add the imports to your file and configure the logging handler.
+Next, install this module.
+
+```
+mpremote connect PORT mip install github:DavesCodeMusings/SyslogHandler-MicroPython
+```
+
+Finally, add the imports to your code and configure the logging handler.
 
 ```
 import logging
@@ -30,7 +38,7 @@ logging.getLogger().addHandler(SyslogHandler((syslog_server_addr, syslog_server_
 A more detailed example can be found in [main.py](src/main.py).
 
 ## Troubleshooting
-There are plenty of things that can go wrong when attempting to log to a remote server from an IoT device. Here are a few things to check.
+There are plenty of things that can go wrong when logging to a remote server from an IoT device. Here are a few things to check.
 
 * Is your syslog server accepting connections? Try `echo "Testing 1 2 3" | nc 127.0.0.1 514` on the machine hosting the syslog server.
 * Is your IoT network firewalled? Be sure to allow port 514/UDP through.
@@ -38,7 +46,7 @@ There are plenty of things that can go wrong when attempting to log to a remote 
 * Is your MicroPython device connected to the network? Take a look at [boot.py](src/boot.py) for hints on how to get that done.
 
 ## Syslog server
-The folks at linuxserver.io have a syslog-ng container that's easy to get up and running on your centralized logging host. The following Docker Compose will help.
+The folks at linuxserver.io have a [syslog-ng container](https://docs.linuxserver.io/images/docker-syslog-ng/) that's easy to get up and running on your centralized logging host. The following Docker Compose will help.
 
 ```
 ---
@@ -59,7 +67,7 @@ services:
     restart: unless-stopped
 ```
 
-This syslog-ng.conf file will do basic logging to a file.
+This syslog-ng.conf file will do basic logging to a file that rotates daily.
 
 ```
 @version:4.8
