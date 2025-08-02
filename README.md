@@ -40,9 +40,10 @@ A more detailed example can be found in [main.py](src/main.py).
 ## Troubleshooting
 There are plenty of things that can go wrong when logging to a remote server from an IoT device. Here are a few things to check.
 
+* Is your syslog address and port correct? If you simply copied main.py, the sample IP address for the syslog server needs to be changed.
+* Is your logging.basicConfig(level) set too high? Default is WARNING and above unless you explicitly set something else.
 * Is your syslog server accepting connections? Try `echo "Testing 1 2 3" | nc 127.0.0.1 514` on the machine hosting the syslog server.
 * Is your IoT network firewalled? Be sure to allow port 514/UDP through.
-* Is your logging.basicConfig(level) set too high? Default is WARNING and above unless you explicitly set something else.
 * Is your MicroPython device connected to the network? Take a look at [boot.py](src/boot.py) for hints on how to get that done.
 
 ## Syslog server
