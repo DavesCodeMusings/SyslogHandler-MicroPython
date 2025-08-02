@@ -97,7 +97,7 @@ log {
 ```
 
 ## Bugs and such
-Did you find something that's not working? Use GitHub issues to report it. Please include:
+Did you find something that's not working? Use [GitHub issues](https://github.com/DavesCodeMusings/SyslogHandler-MicroPython/issues) to report it. Please include:
 
 * The behavior you saw and what caused it
 * What it should have done instead
