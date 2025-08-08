@@ -1,3 +1,8 @@
+# Syslog Handler for MicroPython (C) 2025 David Horton
+# https://github.com/DavesCodeMusings/SyslogHandler-MicroPython
+# Loosely based on Python 3.4's logging/handlers.py (C) 2001-2013 Vinay Sajip
+# Which is based on Based on Sam Rushing's syslog module (C) 1997 Sam Rushing
+
 import logging
 import socket
 
